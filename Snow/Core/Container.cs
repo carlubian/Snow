@@ -9,7 +9,7 @@ namespace Snow.Core
     /// </summary>
     internal static class Container
     {
-        private static readonly IDictionary<Type, object> Dependencies = new Dictionary<Type, object>();
+        private static readonly IDictionary<Type, object?> Dependencies = new Dictionary<Type, object?>();
 
         /// <summary>
         /// Register a component with App-scope: A single instance

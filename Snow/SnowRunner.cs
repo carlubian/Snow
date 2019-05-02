@@ -12,7 +12,7 @@ namespace Snow
         /// </summary>
         /// <param name="runnable">Snow runnable class</param>
         /// <param name="args">Parameters</param>
-        public static void Run(ISnowRunnable runnable, string[] args)
+        public static void Run(ISnowRunnable runnable, string[]? args)
         {
             SnowReflection.InstanceComponents(runnable);
             SnowReflection.InjectDependencies(runnable);

@@ -1,7 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <NullableContextOptions>enable</NullableContextOptions>
+
+    <Id>Snow</Id>
+    <Title>Snow</Title>
+    <Version>0.5.0</Version>
+    <Authors>carlubian</Authors>
+    <Owners>carlubian</Owners>
+    <Company>carlubian</Company>
+    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/carlubian/Snow</PackageProjectUrl>
+    <Description>Experimental .NET Standard IOC container.</Description>
+    <RepositoryUrl>https://github.com/carlubian/Snow.git</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageTags>dotnet-standard, ioc, ioc-container</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

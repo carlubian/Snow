@@ -9,22 +9,20 @@ namespace SnowDemo
     class Program : ISnowRunnable
     {
         // Invoke Snow in the Main method:
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             SnowRunner.Run(new Program());
-            // Or this way:
-            //SnowRunner.Run(new Program(), args);
         }
 
         // Inject a component
         [Autowired]
-        private TextService Text;
+        private readonly TextService? Text;
 
         // Implemented from ISnowRunnable. Logic goes here.
-        public void Run(string[] args)
+        public void Run(string[]? args)
         {
             // Use the injected component
-            Console.WriteLine(Text.GetText());
+            Console.WriteLine(Text?.GetText());
         }
     }
 }

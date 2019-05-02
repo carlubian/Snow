@@ -6,6 +6,6 @@
     /// </summary>
     public interface ISnowRunnable
     {
-        void Run(string[] args);
+        void Run(string[]? args);
     }
 }
