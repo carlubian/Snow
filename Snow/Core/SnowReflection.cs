@@ -27,7 +27,7 @@ namespace Snow.Core
                 return;
 
             assembly.GetTypes()
-                .Where(t => t.CustomAttributes.Any(ca => ca.AttributeType == typeof(ComponentAttribute)))
+                .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                 .ForEach(t =>
                 {
                     if (t.CustomAttributes.Any(ca => ca.AttributeType == typeof(RequestScopeAttribute)))
@@ -59,7 +59,7 @@ namespace Snow.Core
                 return;
 
             ((IEnumerable<Type>)assembly.GetTypes())
-                .Where(t => t.CustomAttributes.Any(ca => ca.AttributeType == typeof(ComponentAttribute)))
+                .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                 .ForEach(t => ReadyInstance(t, Container.Retrieve(t)));
         }
 

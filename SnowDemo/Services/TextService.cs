@@ -2,7 +2,7 @@
 
 namespace SnowDemo.Services
 {
-    [Component]
+    [Service]
     internal class TextService
     {
         internal string GetText() => "Hello from Component";
