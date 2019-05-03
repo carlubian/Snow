@@ -9,7 +9,11 @@ namespace Snow.Core
     /// </summary>
     internal static class Container
     {
-        private static readonly IDictionary<Type, object?> Dependencies = new Dictionary<Type, object?>();
+        internal static readonly IDictionary<Type, object?> Dependencies = new Dictionary<Type, object?>();
+        /// <summary>
+        /// A list of all components that could be instanced at any point.
+        /// </summary>
+        internal static IList<Type> AllComponents;
 
         /// <summary>
         /// Register a component with App-scope: A single instance

@@ -26,22 +26,80 @@ namespace Snow.Core
             if (assembly is null)
                 return;
 
-            assembly.GetTypes()
-                .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
-                .ForEach(t =>
+            //assembly.GetTypes()
+            //    .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
+            //    .ForEach(t =>
+            //    {
+            //        if (t.CustomAttributes.Any(ca => ca.AttributeType == typeof(RequestScopeAttribute)))
+            //        {
+            //            Container.RegisterRequestScoped(Activator.CreateInstance(t));
+            //        }
+            //        else
+            //        {
+            //            var instance = SnowActivator.CreateInstance(t);
+            //            if (instance == null)
+            //                throw new NoSuitableConstructorFound(t.FullName);
+            //            Container.Register(instance);
+            //        }
+            //    });
+
+            Container.AllComponents = assembly.GetTypes()
+                                .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
+                                .ToList();
+
+            foreach (var component in Container.AllComponents)
+            {
+                InstanceComponent(component);
+            }
+        }
+
+        private static void InstanceComponent(Type component)
+        {
+            // The component may have been initialized by the
+            // autowiring constructor on one of the previous components.
+            if (Container.Dependencies.Keys.Contains(component))
+                return;
+
+            // Locate the autowiring constructor, if present
+            var constructor = component.GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
+                .FirstOrDefault(c => c.CustomAttributes.Any(ca => typeof(AutowiredAttribute).IsAssignableFrom(ca.AttributeType)));
+
+            // Missing constructor: Create default instance and store
+            if (constructor is null)
+            {
+                var instance = SnowActivator.CreateInstance(component);
+                if (instance == null)
+                    throw new NoSuitableConstructorFound(component.FullName);
+                Container.Register(instance);
+                return;
+            }
+
+            // Found constructor: Locate and inject dependencies
+            var parameters = constructor.GetParameters();
+            var paramObjects = new List<object>();
+
+            foreach (var parameter in parameters)
+            {
+                // Parameter must be a component
+                if (parameter.ParameterType.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                 {
-                    if (t.CustomAttributes.Any(ca => ca.AttributeType == typeof(RequestScopeAttribute)))
+                    // Check if the type is already instanced
+                    if (!Container.Dependencies.Keys.Contains(parameter.ParameterType))
                     {
-                        Container.RegisterRequestScoped<object>(Activator.CreateInstance(t));
+                        // Instance the type before injecting it
+                        InstanceComponent(parameter.ParameterType); // TODO Check for cyclic dependencies
                     }
-                    else
-                    {
-                        var instance = SnowActivator.CreateInstance(t);
-                        if (instance == null)
-                            throw new NoSuitableConstructorFound(t.FullName);
-                        Container.Register(instance);
-                    }
-                });
+                    
+                    paramObjects.Add(Container.Retrieve(parameter.ParameterType));
+                }
+                else
+                    throw new AutowiringConstructorException($@"Parameter {parameter.ParameterType} is not a component.
+All parameters in an Autowired Constructor must be components.");
+            }
+
+            // Invoke constructor and register component
+            var newInstance = constructor.Invoke(paramObjects.ToArray());
+            Container.Register(newInstance);
         }
 
         /// <summary>
