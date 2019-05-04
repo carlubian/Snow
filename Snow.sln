@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snow", "Snow\Snow.csproj", "{B288B387-4F91-4AEB-A970-C5141D6D3222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowDemo", "SnowDemo\SnowDemo.csproj", "{2CAC8607-E406-4A7F-9DCE-64F1DBE15AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnowDemo", "SnowDemo\SnowDemo.csproj", "{2CAC8607-E406-4A7F-9DCE-64F1DBE15AB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF5B4634-BF0A-4815-8C6F-97CB0311E2D5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -16,14 +16,16 @@ namespace SnowDemo
 
         // Inject a component
         [Autowired]
-        private readonly WrapService? Text;
+        private readonly WrapService? Service;
 
         // Implemented from ISnowRunnable. Logic goes here.
         public void Run(string[]? args)
         {
             // Use the injected component
-            Console.WriteLine(Text?.GetText());
-            Console.WriteLine(Text?.GetNumber());
+            Console.WriteLine(Service?.GetText());
+            Console.WriteLine(Service?.GetNumber());
+            Console.WriteLine(Service?.Calculate(8));
+            Console.WriteLine(Service?.NumberProperty());
         }
     }
 }

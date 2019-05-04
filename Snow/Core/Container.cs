@@ -16,20 +16,17 @@ namespace Snow.Core
         internal static IList<Type> AllComponents;
 
         /// <summary>
+        /// Stores types alias equivalence.
+        /// </summary>
+        internal static IDictionary<Type, Type> Aliases = new Dictionary<Type, Type>();
+
+        /// <summary>
         /// Register a component with App-scope: A single instance
         /// will be used for all subsequent injections.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="instance"></param>
-        public static void Register<T>(T instance) where T : class => Dependencies.Add(instance.GetType(), instance);
-
-        /// <summary>
-        /// Register a component with Request-scope: A new instance
-        /// will be created for each subsequent injection.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="instance"></param>
-        public static void RegisterRequestScoped<T>(T instance) where T : class => Dependencies.Add(instance.GetType(), null);
+        public static void Register<T>(Type type, T instance) where T : class => Dependencies.Add(type, instance);
 
         /// <summary>
         /// Retrieves an instance of a component to
