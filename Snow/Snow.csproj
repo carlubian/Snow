@@ -1,17 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <LangVersion>8.0</LangVersion>
     <NullableContextOptions>enable</NullableContextOptions>
 
     <Id>Snow</Id>
     <Title>Snow</Title>
-    <Version>0.5.0</Version>
+    <Version>0.5.5</Version>
     <Authors>carlubian</Authors>
     <Owners>carlubian</Owners>
     <Company>carlubian</Company>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Mark as CLS Compliant, multitarget net461.</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/carlubian/Snow</PackageProjectUrl>
     <Description>Experimental .NET Standard IOC container.</Description>
     <RepositoryUrl>https://github.com/carlubian/Snow.git</RepositoryUrl>

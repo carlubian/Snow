@@ -1,5 +1,7 @@
 ﻿using Snow.Core;
+using System;
 
+[assembly: CLSCompliant(true)]
 namespace Snow
 {
     /// <summary>
@@ -8,24 +10,15 @@ namespace Snow
     public static class SnowRunner
     {
         /// <summary>
-        /// Runs a Snow app with the specified parameters.
+        /// Runs a Snow app with optional parameters.
         /// </summary>
         /// <param name="runnable">Snow runnable class</param>
         /// <param name="args">Parameters</param>
-        public static void Run(ISnowRunnable runnable, string[]? args)
+        public static void Run(ISnowRunnable runnable, string[]? args = null)
         {
             SnowReflection.InstanceComponents(runnable);
             SnowReflection.InjectDependencies(runnable);
             runnable.Run(args);
-        }
-
-        /// <summary>
-        /// Runs a Snow app.
-        /// </summary>
-        /// <param name="runnable">Snow runnable class</param>
-        public static void Run(ISnowRunnable runnable)
-        {
-            Run(runnable, null);
         }
     }
 }

@@ -26,23 +26,6 @@ namespace Snow.Core
             if (assembly is null)
                 return;
 
-            //assembly.GetTypes()
-            //    .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
-            //    .ForEach(t =>
-            //    {
-            //        if (t.CustomAttributes.Any(ca => ca.AttributeType == typeof(RequestScopeAttribute)))
-            //        {
-            //            Container.RegisterRequestScoped(Activator.CreateInstance(t));
-            //        }
-            //        else
-            //        {
-            //            var instance = SnowActivator.CreateInstance(t);
-            //            if (instance == null)
-            //                throw new NoSuitableConstructorFound(t.FullName);
-            //            Container.Register(instance);
-            //        }
-            //    });
-
             Container.AllComponents = assembly.GetTypes()
                                 .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                                 .ToList();
