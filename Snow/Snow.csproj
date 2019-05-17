@@ -7,12 +7,11 @@
 
     <Id>Snow</Id>
     <Title>Snow</Title>
-    <Version>0.5.5</Version>
+    <Version>0.6.5</Version>
     <Authors>carlubian</Authors>
     <Owners>carlubian</Owners>
     <Company>carlubian</Company>
     <PackageReleaseNotes>Mark as CLS Compliant, multitarget net461.</PackageReleaseNotes>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/carlubian/Snow</PackageProjectUrl>
     <Description>Experimental .NET Standard IOC container.</Description>
     <RepositoryUrl>https://github.com/carlubian/Snow.git</RepositoryUrl>

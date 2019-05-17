@@ -1,9 +1,12 @@
 ﻿using Snow.Attributes;
+using SnowDemo.Interfaces;
 
 namespace SnowDemo.Services
 {
     [Service]
-    public class NumberService
+    [RequestScope]
+    [TypeAlias(typeof(INumberService))]
+    public class NumberService : INumberService
     {
         public int Invoke() => 2;
     }

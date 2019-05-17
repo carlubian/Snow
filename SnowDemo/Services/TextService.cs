@@ -1,14 +1,15 @@
 ﻿using Snow.Attributes;
+using SnowDemo.Interfaces;
 
 namespace SnowDemo.Services
 {
     [Service]
     internal class TextService
     {
-        private NumberService NumberService;
+        private INumberService NumberService;
 
-        [Autowired]
-        internal TextService(NumberService NumberService)
+        [AutowireConstructor]
+        internal TextService(INumberService NumberService)
         {
             this.NumberService = NumberService;
         }
