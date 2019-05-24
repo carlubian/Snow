@@ -31,4 +31,4 @@ class Execution
 Snow is compatible with .NET Standard 2.0, which includes a myriad of destination platforms like .NET Core, ASP.NET Core, Xamarin or UWP.
 
 ## Documentation
-See [the Wiki](https://github.com/carlubian/Snow/wiki) for more details on how to use Snow.
+See [the documentation site](https://carlubian.github.io/Snow) for more details on how to use Snow.
