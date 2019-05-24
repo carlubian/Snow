@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Inject components - Snow</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mdb.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Snow</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reference.html">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Download.html">Download</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Encabezado -->
+<div class="jumbotron jumbotron-fluid cyan darken-3">
+    <div class="row justify-content-center container-fluid">
+        <div class="col-sm-8">
+
+            <h2 class="white-text">Inject components</h2>
+            <p class="lead white-text">Request components as dependencies and call their methods.</p>
+            <hr class="my-4">
+
+            <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Injecting components</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Some notes on component injection.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Either the entry point class or any component class can require and
+                receive an instance of a component.
+            </p>
+            <p>
+                Snow offers two ways of doing this: Autowired Properties and Autowired
+                Constructors. Note that you can combine these two alternatives at will.
+            </p>
+            <p>
+                Also, keep in mind that all component injections are performed prior to
+                execution. If this process fails, Snow will abort and throw an exception.
+                Thus, you don't need to check injected dependencies for null values.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Autowired properties</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Easy, short and to the point.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Start by adding a property or field to your component class,
+                and mark it with the [Autowired] attribute:
+            </p>
+            <script src="https://gist.github.com/carlubian/6f872aed82e395d97f63ac2136358287.js"></script>
+            <p>
+                This is really all you need. When you execute this program, Snow will fill the
+                property with a valid instance of NumbersService that you can use.
+            </p>
+            <p>
+                Autowired properties can be public, internal or private, and you can even
+                make them readonly to get an immutable component, and it will work just the same.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Autowired constructors</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">A more structured and formalist approach</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Autowired constructors mimic other IOC libraries, where
+                dependencies are requested through constructor parameters.
+            </p>
+            <p>
+                Simply add a new constructor to the class, and put the required components
+                as parameters. Then, mark it with the [AutowireConstructor] attribute:
+            </p>
+            <script src="https://gist.github.com/carlubian/2a4266790df20bb5740e7d0fcdc99964.js"></script>
+            <p>
+                Keep in mind the following particularities of Autowired Constructors:
+                <ul>
+                    <li>
+                        There should only be one constructor marked as Autowired. If there are more
+                        than one, only the first will be used, but you should not depend on this
+                        behavior.
+                    </li>
+                    <li>
+                        Autowired Constructors can be public, internal or private.
+                    </li>
+                    <li>
+                        If Snow finds an Autowired Constructor, it will ignore the static
+                        [CreateInstance] method and the default constructor, if present, and
+                        use the Autowired Constructor instead.
+                    </li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Why not both?</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Request everything! All the time!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                A component can use both Autowired Properties and Autowired
+                Constructors to request all of its dependencies:
+            </p>
+            <script src="https://gist.github.com/carlubian/86e0a14dccc9a19c353e4ec2820891cc.js"></script>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Managing type aliases</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Refer to a component by its interface.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                If a component has a type alias, you can request it both by the
+                alias interface and its native type:
+            </p>
+            <script src="https://gist.github.com/carlubian/0d11ac5778e63c89a633df55c619a9a4.js"></script>
+            <p>
+                Note that this applies both to Autowired Properties and Autowired Constructors.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido oscuro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid cyan darken-3">
+                <div class="row justify-content-center mx-5">
+                    <h2 class="white-text">You're all done!</h2>
+                    <p class="lead white-text">
+                        Finally, you are using injected components
+                        to make some magic.
+                    </p>
+                    <hr class="my-4">
+
+                    <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+
+</body>
+
+</html>
+

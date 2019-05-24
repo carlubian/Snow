@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Project Setup - Snow</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mdb.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Snow</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reference.html">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Download.html">Download</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Encabezado -->
+<div class="jumbotron jumbotron-fluid cyan darken-3">
+    <div class="row justify-content-center container-fluid">
+        <div class="col-sm-8">
+
+            <h2 class="white-text">Project setup</h2>
+            <p class="lead white-text">Start a new project and prepare it to use Snow.</p>
+            <hr class="my-4">
+
+            <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Execution model</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Before starting, some information about Snow.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Snow does its magic by replacing the entry point of your program with one
+                of its own, that finds, registers and injects components before executing
+                your code.
+            </p>
+            <p>
+                This means that the entry point (normally the Main method) is the only
+                part of a program that will have Snow-related code. Everything else is
+                handled transparently using attributes.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Down to business</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Let's start with a new console project.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                First, create a new .NET console project, either in Visual Studio or
+                through the command line. Then, follow these steps:
+            </p>
+            <p>
+                Locate the entry point, and make the class extend the ISnowRunnable interface:
+            </p>
+            <script src="https://gist.github.com/carlubian/cc2f610a51856ffbf0f570e26165e840.js"></script>
+            <p>
+                Implement the Run method required by the interface, and move into it the
+                contents of the Main method:
+            </p>
+            <script src="https://gist.github.com/carlubian/390e185ce4fd70ac2ae6d5e8ea9d2476.js"></script>
+            <p>
+                Tell Snow to execute the program:
+            </p>
+            <script src="https://gist.github.com/carlubian/56eadd8e5d1272fcbc5ef9105914ca8f.js"></script>
+            <p>
+                If you run the program at this point, the behavior should remain the same. Snow
+                is now executing your program, even though it has nothing to do yet.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido oscuro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid amber darken-2">
+                <div class="row justify-content-center mx-5">
+                    <h2 class="white-text">A note on web projects</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead white-text">This applies to ASP.NET Core web projects, in all their variants.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Web projects require a bit more of setup, for these purposes:
+            </p>
+            <p>
+                <ul>
+                    <li>Make controllers into components that can use dependencies.</li>
+                    <li>
+                        Change the lifetime of controllers so that a single instance is
+                        used instead of initializing them on each request.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                This modifications are explained somewhere else not yet implemented.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido oscuro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid cyan darken-3">
+                <div class="row justify-content-center mx-5">
+                    <h2 class="white-text">You're all done!</h2>
+                    <p class="lead white-text">
+                        Your project is now properly configured to use
+                        Snow. The next step is to create some components
+                        and give it something to do.
+                    </p>
+                    <hr class="my-4">
+
+                    <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Create Components - Snow</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mdb.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="index.html">Snow</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Reference.html">References</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Download.html">Download</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Encabezado -->
+<div class="jumbotron jumbotron-fluid cyan darken-3">
+    <div class="row justify-content-center container-fluid">
+        <div class="col-sm-8">
+
+            <h2 class="white-text">Create components</h2>
+            <p class="lead white-text">All about creating and preparing components for later use.</p>
+            <hr class="my-4">
+
+            <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Component information</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Fun facts about Snow components.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Components are the main building block in Snow. They can require and
+                be injected into other components.
+            </p>
+            <p>
+                Generally speaking, any class that will make use of Snow, be it to request
+                a dependency, to be injected as a dependency itself, or both must be tagged
+                as a component. As an exception, the main class (which extends ISnowRunnable)
+                can request dependencies without being a component (though it can be marked as such).
+            </p>
+            <p>
+                Components are defined by the use of the [Component] attribute, or other attribute that
+                extends it. Snow provides the [Service] attribute as an example of this behavior. The
+                difference between these attributes is only for added clarity to the users.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Make a component from scratch</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Let's add some functionality to the project.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                Create a new class in your project. For organization purposes, we
+                advise to put all component classes inside a folder, and name them
+                with a Component or Service suffix. Of course, you can follow a
+                different method.
+            </p>
+            <p>
+                Then, mark the class with the [Component] or [Service] attribute:
+            </p>
+            <script src="https://gist.github.com/carlubian/1de7e0c14cb022af9e3b713ecf7111d0.js"></script>
+            <p>
+                Snow components don't have to be public classes. They can be internal or even private.
+                The same applies to their methods, though you won't be able to call private methods
+                unless you use reflection.
+            </p>
+            <p>
+                As components will be injected already instanced, static methods are unnecessary:
+            </p>
+            <script src="https://gist.github.com/carlubian/dcf9f75bcb634e571783d7c73660ff8a.js"></script>
+            <p>
+                This class is now a valid component, and other components will be able to call the
+                Sum() method. However, some components could require some initialization logic.
+            </p>
+            <p>
+                For this, you have two solutions: Either add a default constructor, or a static
+                factory method marked with the [CreateInstance] attribute. Note that these two
+                alternatives should not be combined.
+            </p>
+            <script src="https://gist.github.com/carlubian/46a44b164ea1f1ff3d50dffa9c8e74bb.js"></script>
+            <p>
+                It's possible for a component to have other components inside. It doesn't need any
+                special work, simply request any needed dependencies as indicated in the 'Inject
+                Components' tutorial.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido claro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="row justify-content-center mx-5">
+                    <h2>Components implementing interfaces</h2>
+                </div>
+                <div class="row justify-content-center mx-5">
+                    <p class="lead">Some remarks on components extending interfaces.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                In the IOC world, it's very common to inject components as an interface
+                instead of as a concrete type, for easier replacement of implementations.
+            </p>
+            <p>
+                Snow allows this in the form of 'Type Aliases', with the following
+                limitations:
+            </p>
+            <p>
+                <ul>
+                    <li>
+                        An interface should only have one component implementation. For example,
+                        INumbersService should only be implemented by the NumbersServiceFoo class. It's
+                        possible to have other implementing classes, as long as they are not components.
+                    </li>
+                    <li>
+                        However, a component can extend and be aliased by multiple interfaces. For
+                        example, NumbersServiceFoo can extend INumbersService and IMultiplicationService.
+                    </li>
+                    <li>
+                        All type aliases must be valid superinterfaces. That is, NumbersServiceFoo cannot
+                        be aliased by IEnumerable&lt;TeddyBear&gt; unless it correctly implements
+                        such interface.
+                    </li>
+                </ul>
+            </p>
+            <p>
+                To indicate that a component has a type alias, use the [TypeAlias] attribute on it:
+            </p>
+            <script src="https://gist.github.com/carlubian/cf62d79bd14f0e8d7059204a120d9a4d.js"></script>
+
+        </div>
+    </div>
+
+    <!-- Panel de contenido oscuro -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <div class="jumbotron jumbotron-fluid cyan darken-3">
+                <div class="row justify-content-center mx-5">
+                    <h2 class="white-text">You're all done!</h2>
+                    <p class="lead white-text">
+                        Your project now has some components that will
+                        soon be injected as dependencies.
+                    </p>
+                    <hr class="my-4">
+
+                    <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/mdb.js"></script>
+
+</body>
+
+</html>
+
