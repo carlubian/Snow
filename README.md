@@ -1,4 +1,5 @@
 [![Build Status](https://carlubian.visualstudio.com/GitHub%20Interop/_apis/build/status/Snow%20Build?branchName=master)](https://carlubian.visualstudio.com/GitHub%20Interop/_build/latest?definitionId=24&branchName=master)
+[![CodeFactor](https://www.codefactor.io/repository/github/carlubian/snow/badge/master)](https://www.codefactor.io/repository/github/carlubian/snow/overview/master)
 # Snow
 <strong>Experimental .NET Standard IOC container.</strong>
 

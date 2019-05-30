@@ -125,16 +125,44 @@
             <p>
                 Locate the entry point, and make the class extend the ISnowRunnable interface:
             </p>
-            <script src="https://gist.github.com/carlubian/cc2f610a51856ffbf0f570e26165e840.js"></script>
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World");
+    }
+}</pre>
             <p>
                 Implement the Run method required by the interface, and move into it the
                 contents of the Main method:
             </p>
-            <script src="https://gist.github.com/carlubian/390e185ce4fd70ac2ae6d5e8ea9d2476.js"></script>
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+{
+    public static void Main(string[] args)
+    {
+        
+    }
+    
+    public void Run(string[] args)
+    {
+        Console.WriteLine("Hello, World");
+    }
+}</pre>
             <p>
                 Tell Snow to execute the program:
             </p>
-            <script src="https://gist.github.com/carlubian/56eadd8e5d1272fcbc5ef9105914ca8f.js"></script>
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+{
+    public static void Main(string[] args)
+    {
+        SnowRunner.Run(new Program(), args);
+    }
+    
+    public void Run(string[] args)
+    {
+        Console.WriteLine("Hello, World");
+    }
+}</pre>
             <p>
                 If you run the program at this point, the behavior should remain the same. Snow
                 is now executing your program, even though it has nothing to do yet.
@@ -205,9 +233,19 @@
 
 </div>
 
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-4">
+
+    <div class="footer-copyright text-center py-3">
+        Hello from Spain!
+    </div>
+
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/mdb.js"></script>

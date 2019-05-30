@@ -132,7 +132,10 @@
             <p>
                 Then, mark the class with the [Component] or [Service] attribute:
             </p>
-            <script src="https://gist.github.com/carlubian/1de7e0c14cb022af9e3b713ecf7111d0.js"></script>
+            <pre class="prettyprint lang-cs">[Service]
+internal class NumbersService
+{
+}</pre>
             <p>
                 Snow components don't have to be public classes. They can be internal or even private.
                 The same applies to their methods, though you won't be able to call private methods
@@ -141,7 +144,14 @@
             <p>
                 As components will be injected already instanced, static methods are unnecessary:
             </p>
-            <script src="https://gist.github.com/carlubian/dcf9f75bcb634e571783d7c73660ff8a.js"></script>
+            <pre class="prettyprint lang-cs">[Service]
+internal class NumbersService
+{
+    internal int Sum(int a, int b)
+    {
+        return a + b;
+    ]
+}</pre>
             <p>
                 This class is now a valid component, and other components will be able to call the
                 Sum() method. However, some components could require some initialization logic.
@@ -151,7 +161,32 @@
                 factory method marked with the [CreateInstance] attribute. Note that these two
                 alternatives should not be combined.
             </p>
-            <script src="https://gist.github.com/carlubian/46a44b164ea1f1ff3d50dffa9c8e74bb.js"></script>
+            <pre class="prettyprint lang-cs">[Service]
+internal class NumbersService
+{
+    private int _factor;
+    
+    // Alternative 1: Default constructor
+    public NumbersService()
+    {
+        _factor = 2;
+    }
+    
+    // Alternative 2: Static factory method
+    [CreateInstance]
+    internal static NumbersService Initialize()
+    {
+        return new NumbersService
+        {
+            _factor = 2;
+        }
+    }
+    
+    internal int Multiply(int num)
+    {
+        return num * _factor;
+    }
+}</pre>
             <p>
                 It's possible for a component to have other components inside. It doesn't need any
                 special work, simply request any needed dependencies as indicated in the 'Inject
@@ -210,7 +245,20 @@
             <p>
                 To indicate that a component has a type alias, use the [TypeAlias] attribute on it:
             </p>
-            <script src="https://gist.github.com/carlubian/cf62d79bd14f0e8d7059204a120d9a4d.js"></script>
+            <pre class="prettyprint lang-cs">internal interface INumbersService
+{
+    int Sum(int a, int b);
+}
+
+[Service]
+[TypeAlias(typeof(INumbersService)]
+internal class NumbersService : INumbersService
+{
+    public int Sum(int a, int b)
+    {
+        return a + b;
+    }
+}</pre>
 
         </div>
     </div>
@@ -237,9 +285,19 @@
 
 </div>
 
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-4">
+
+    <div class="footer-copyright text-center py-3">
+        Hello from Spain!
+    </div>
+
+</footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/mdb.js"></script>
