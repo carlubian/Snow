@@ -11,13 +11,13 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/mdb.css" rel="stylesheet">
+    <link href="css/flushing.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="future-3 grey-3-text">
     
-    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+    <nav class="navbar navbar-expand-lg navbar-dark cyan-4">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="index.html">Snow</a>
 
@@ -49,37 +49,33 @@
     </nav>
 
     <!-- Encabezado -->
-<div class="jumbotron jumbotron-fluid cyan darken-3">
+<div class="jumbotron jumbotron-fluid cyan-3">
     <div class="row justify-content-center container-fluid">
         <div class="col-sm-8">
 
-            <h2 class="white-text">Project setup</h2>
-            <p class="lead white-text">Start a new project and prepare it to use Snow.</p>
+            <h2 class="future-3-text">Project setup</h2>
+            <p class="lead future-3-text">Start a new project and prepare it to use Snow.</p>
             <hr class="my-4">
 
-            <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+            <a class="btn gold-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
 
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Execution model</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Before starting, some information about Snow.</p>
-                </div>
-            </div>
-
+            <h2>Execution model</h2>
+            <p class="card-text subtitle">
+                Before starting, some information about Snow.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -98,22 +94,21 @@
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Down to business</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Let's start with a new console project.</p>
-                </div>
-            </div>
-
+            <h2>Down to business</h2>
+            <p class="card-text subtitle">
+                Let's start with a new console project.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -134,7 +129,7 @@
     }
 }</pre>
             <p>
-                Implement the Run method required by the interface, and move into it the
+                Implement the <span class="emphasis cyan-3-text">Run</span> method required by the interface, and move into it the
                 contents of the Main method:
             </p>
             <pre class="prettyprint lang-cs">public class Program : ISnowRunner
@@ -171,22 +166,21 @@
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido oscuro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid cyan-3 my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid amber darken-2">
-                <div class="row justify-content-center mx-5">
-                    <h2 class="white-text">A note on web projects</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead white-text">This applies to ASP.NET Core web projects, in all their variants.</p>
-                </div>
-            </div>
-
+            <h2 class="future-3-text">A note on web projects</h2>
+            <p class="card-text future-3-text">
+                This applies to ASP.NET Core web projects, in all their variants.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -210,34 +204,28 @@
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido oscuro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid cyan-3 my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid cyan darken-3">
-                <div class="row justify-content-center mx-5">
-                    <h2 class="white-text">You're all done!</h2>
-                    <p class="lead white-text">
-                        Your project is now properly configured to use
-                        Snow. The next step is to create some components
-                        and give it something to do.
-                    </p>
-                    <hr class="my-4">
-
-                    <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
-                </div>
-            </div>
-
+            <h2 class="future-3-text">You're all done!</h2>
+            <p class="card-text future-3-text">
+                Your project is now properly configured to use
+                Snow. The next step is to create some components
+                and give it something to do.
+            </p>
+            <hr class="my-4">
+            <a class="btn gold-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
         </div>
     </div>
-
 </div>
 
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-4">
+<footer class="page-footer font-small cyan-4">
 
-    <div class="footer-copyright text-center py-3">
+    <div class="footer-copyright text-center future-3-text py-3">
         Hello from Spain!
     </div>
 

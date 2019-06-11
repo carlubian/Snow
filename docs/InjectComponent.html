@@ -11,13 +11,13 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/mdb.css" rel="stylesheet">
+    <link href="css/flushing.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="future-3 grey-3-text">
     
-    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+    <nav class="navbar navbar-expand-lg navbar-dark cyan-4">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="index.html">Snow</a>
 
@@ -49,37 +49,33 @@
     </nav>
 
     <!-- Encabezado -->
-<div class="jumbotron jumbotron-fluid cyan darken-3">
+<div class="jumbotron jumbotron-fluid cyan-3">
     <div class="row justify-content-center container-fluid">
         <div class="col-sm-8">
 
-            <h2 class="white-text">Inject components</h2>
-            <p class="lead white-text">Request components as dependencies and call their methods.</p>
+            <h2 class="future-3-text">Inject components</h2>
+            <p class="lead future-3-text">Request components as dependencies and call their methods.</p>
             <hr class="my-4">
 
-            <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
+            <a class="btn gold-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
 
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Injecting components</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Some notes on component injection.</p>
-                </div>
-            </div>
-
+            <h2>Injecting components</h2>
+            <p class="card-text subtitle">
+                Some notes on component injection.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -101,22 +97,21 @@
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Autowired properties</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Easy, short and to the point.</p>
-                </div>
-            </div>
-
+            <h2>Autowired properties</h2>
+            <p class="card-text subtitle">
+                Easy, short, and to the point.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluent">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -124,7 +119,7 @@
 
             <p>
                 Start by adding a property or field to your component class,
-                and mark it with the [Autowired] attribute:
+                and mark it with the <span class="emphasis cyan-3-text">[Autowired]</span> attribute:
             </p>
             <pre class="prettyprint lsng-cs">// Either a [Component] or the Program entry point
 public class ExecutingClass
@@ -148,22 +143,21 @@ public class ExecutingClass
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Autowired constructors</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">A more structured and formalist approach</p>
-                </div>
-            </div>
-
+            <h2>Autowired constructors</h2>
+            <p class="card-text subtitle">
+                A more structured and formalist approach.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluent">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -175,7 +169,7 @@ public class ExecutingClass
             </p>
             <p>
                 Simply add a new constructor to the class, and put the required components
-                as parameters. Then, mark it with the [AutowireConstructor] attribute:
+                as parameters. Then, mark it with the <span class="emphasis cyan-3-text">[AutowireConstructor]</span> attribute:
             </p>
             <pre class="prettyprint lang-cs">[Component]
 public ExecutableComponent
@@ -214,22 +208,21 @@ public ExecutableComponent
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Why not both?</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Request everything! All the time!</p>
-                </div>
-            </div>
-
+            <h2>Why not both?</h2>
+            <p class="card-text subtitle">
+                Request everything! All the time!
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -256,22 +249,21 @@ public class ExecutableComponent
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido claro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="row justify-content-center mx-5">
-                    <h2>Managing type aliases</h2>
-                </div>
-                <div class="row justify-content-center mx-5">
-                    <p class="lead">Refer to a component by its interface.</p>
-                </div>
-            </div>
-
+            <h2>Managing type aliases</h2>
+            <p class="card-text subtitle">
+                Refer to a component by its interface.
+            </p>
         </div>
     </div>
+</div>
+
+<div class="container-fluid">
 
     <!-- Texto de la sección -->
     <div class="row justify-content-center mt-5">
@@ -298,33 +290,27 @@ public class ExecutingComponent
 
         </div>
     </div>
+</div>
 
-    <!-- Panel de contenido oscuro -->
-    <div class="row justify-content-center mt-5">
+<!-- Panel de contenido oscuro -->
+<div class="jumbotron jumbotron-fluid cyan-3 my-5">
+    <div class="row justify-content-center">
         <div class="col-sm-8">
-
-            <div class="jumbotron jumbotron-fluid cyan darken-3">
-                <div class="row justify-content-center mx-5">
-                    <h2 class="white-text">You're all done!</h2>
-                    <p class="lead white-text">
-                        Finally, you are using injected components
-                        to make some magic.
-                    </p>
-                    <hr class="my-4">
-
-                    <a class="btn btn-warning btn-lg" href="Reference.html" role="button">Go back</a>
-                </div>
-            </div>
-
+            <h2 class="future-3-text">You're all done!</h2>
+            <p class="card-text future-3-text">
+                Finally, you are using injected components
+                to make some magic.
+            </p>
+            <hr class="my-4">
+            <a class="btn gold-3 future-3-text btn-lg" href="Reference.html" role="button">Go back</a>
         </div>
     </div>
-
 </div>
 
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-4">
+<footer class="page-footer font-small cyan-4">
 
-    <div class="footer-copyright text-center py-3">
+    <div class="footer-copyright text-center future-3-text py-3">
         Hello from Spain!
     </div>
 

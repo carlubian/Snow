@@ -11,13 +11,13 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/selawik" type="text/css" />
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/muli" type="text/css" />
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/mdb.css" rel="stylesheet">
+    <link href="css/flushing.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="future-3 grey-3-text">
     
-    <nav class="navbar navbar-expand-lg navbar-dark cyan darken-4">
+    <nav class="navbar navbar-expand-lg navbar-dark cyan-4">
         <!-- Navbar brand -->
         <a class="navbar-brand" href="index.html">Snow</a>
 
@@ -48,15 +48,15 @@
 
     </nav>
 
-    <div class="jumbotron jumbotron-fluid cyan darken-3">
+    <div class="jumbotron jumbotron-fluid cyan-3">
         <div class="row justify-content-center container-fluid">
             <div class="col-sm-10">
     
-                <h2 class="white-text">Dependency injection made easy</h2>
-                <p class="lead white-text">.NET programmers shouldn't need to care about low-level details.</p>
+                <h2 class="future-3-text">Dependency injection made easy</h2>
+                <p class="subtitle future-3-text">.NET programmers shouldn't need to care about low-level details.</p>
                 <hr class="my-4">
     
-                <p class="white-text">
+                <p class="future-3-text">
                     Snow gives you a full featured dependency injection and IOC system without
                     requiring you to manually instance or register components into a container.
                     Instead, just mark a class with an attribute, and Snow will do all the
@@ -72,21 +72,21 @@
         <!-- Características -->
         <div class="row justify-content-center">
     
-            <div class="col-sm-10">
+            <div class="col-sm-8">
     
                 <div class="row justify-content-center">
                     <h3>Main features</h3>
                 </div>
     
                 <div class="row justify-content-center mt-2">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-tag fa-2x"></i>
+                                <i class="fas fa-tag fa-2x orange-3-text"></i>
                                 <h4 class="card-title">Obvious</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     How would you check whether a class is intended to
                                     be a component? See if it has the [Component] attribute.
                                     Can't get more obvious unless it punches you in the face.
@@ -96,14 +96,14 @@
                         </div>
     
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-cogs fa-2x"></i>
+                                <i class="fas fa-cogs fa-2x grey-1-text"></i>
                                 <h4 class="card-title">Self-aware</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     Forget about calling a container or registering instances,
                                     Snow will take care of all that. All that's left for you
                                     is request components.
@@ -113,14 +113,14 @@
                         </div>
     
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-project-diagram fa-2x"></i>
+                                <i class="fas fa-project-diagram fa-2x red-3-text"></i>
                                 <h4 class="card-title">Recursive</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     Components can use other components themselves, and you
                                     still don't need to worry about it. Seriously, Snow knows
                                     what it's doing.
@@ -133,14 +133,14 @@
                 </div>
     
                 <div class="row justify-content-center mt-2">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-code fa-2x"></i>
+                                <i class="fas fa-code fa-2x grey-3-text"></i>
                                 <h4 class="card-title">Flexible</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     You can use annotated properties or constructors to
                                     request dependencies. Or even both.
                                 </p>
@@ -149,14 +149,14 @@
                         </div>
     
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-magic fa-2x"></i>
+                                <i class="fas fa-magic fa-2x purple-3-text"></i>
                                 <h4 class="card-title">Mascarade</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     Dependencies can also be requested through an interface, to
                                     allow replacing them with other implementations.
                                 </p>
@@ -165,14 +165,14 @@
                         </div>
     
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
     
                         <div class="card">
     
                             <div class="card-body">
-                                <i class="fas fa-space-shuttle fa-2x"></i>
+                                <i class="fas fa-space-shuttle fa-2x blue-3-text"></i>
                                 <h4 class="card-title">Future proof</h4>
-                                <p class="card-text lead">
+                                <p class="card-text subtitle">
                                     Snow can be used from .NET Framework, .NET Core apps, UWP, Mono and Xamarin.
                                     It also supports the latest features in C#.
                                 </p>
@@ -187,33 +187,27 @@
     
         </div>
     
-        <!-- Panel de contenido oscuro -->
-        <div class="row justify-content-center mt-5">
+    </div>
+
+    <!-- Panel de contenido oscuro -->
+    <div class="jumbotron jumbotron-fluid cyan-3 my-5">
+        <div class="row justify-content-center">
             <div class="col-sm-8">
-    
-                <div class="jumbotron jumbotron-fluid cyan darken-3">
-                    <div class="row justify-content-center mx-5">
-                        <h2 class="white-text">using Snow;</h2>
-                    </div>
-                    <div class="row justify-content-center mx-5">
-                        <p class="card-text white-text text-center">
-                            Head over to the Download page to get information on how to use Snow in your projects,
-                            as well as where to find the source repository, should it be needed.
-                        </p>
-                        <hr class="my-4">
-                        <a class="btn btn-warning btn-lg" href="Download.html" role="button">Download</a>
-                    </div>
-                </div>
-    
+                <h2 class="future-3-text">using Snow;</h2>
+                <p class="card-text future-3-text">
+                    Head over to the Download page to get information on how to use Snow in your projects,
+                    as well as where to find the source repository, should it be needed.
+                </p>
+                <hr class="my-4">
+                <a class="btn gold-3 future-3-text btn-lg" href="Download.html" role="button">Download</a>
             </div>
         </div>
-    
     </div>
 
     <!-- Footer -->
-    <footer class="page-footer font-small cyan darken-4">
+    <footer class="page-footer font-small cyan-4">
 
-        <div class="footer-copyright text-center py-3">
+        <div class="footer-copyright text-center py-3 future-3-text">
             Hello from Spain!
         </div>
 
