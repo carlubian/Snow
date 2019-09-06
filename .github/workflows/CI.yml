@@ -1,0 +1,22 @@
+name: .NET Core CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.2.108
+    - name: Build library
+      run: dotnet build Snow/Snow.csproj -f netstandard2.0
+    - name: Build demo project
+      run: dotnet build SnowDemo/SnowDemo.csproj -f netcoreapp2.0
