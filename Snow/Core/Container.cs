@@ -1,6 +1,7 @@
 ﻿using Snow.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Snow.Core
 {
@@ -13,7 +14,7 @@ namespace Snow.Core
         /// <summary>
         /// A list of all components that could be instanced at any point.
         /// </summary>
-        internal static IList<Type> AllComponents;
+        internal static IList<Type> AllComponents = Enumerable.Empty<Type>().ToList();
 
         /// <summary>
         /// Stores types alias equivalence.
@@ -39,7 +40,7 @@ namespace Snow.Core
         {
             if (Dependencies.ContainsKey(t))
                 return Dependencies[t] ?? SnowReflection.InstanceRequestScoped(t);
-            throw new NoSuitableTypeFound(t?.FullName);
+            throw new NoSuitableTypeFound(t?.FullName ?? "Null type received.");
         }
     }
 }
