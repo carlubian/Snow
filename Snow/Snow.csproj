@@ -1,17 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <LangVersion>8.0</LangVersion>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <Nullable>enable</Nullable>
 
     <Id>Snow</Id>
     <Title>Snow</Title>
-    <Version>0.6.6</Version>
+    <Version>0.7.0</Version>
     <Authors>carlubian</Authors>
     <Owners>carlubian</Owners>
     <Company>carlubian</Company>
-    <PackageReleaseNotes>Add PackageLicenseExpression.</PackageReleaseNotes>
+    <PackageReleaseNotes>Change target to .NET 5.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/carlubian/Snow</PackageProjectUrl>
     <Description>Experimental .NET Standard IOC container.</Description>
     <RepositoryUrl>https://github.com/carlubian/Snow.git</RepositoryUrl>

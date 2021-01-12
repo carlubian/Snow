@@ -30,6 +30,17 @@ namespace Snow.Core
                                 .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                                 .ToList();
 
+            // Also check referenced assemblies.
+            foreach (var assemblyName in assembly.GetReferencedAssemblies())
+            {
+                var dependency = Assembly.Load(assemblyName);
+
+                Container.AllComponents = Container.AllComponents.Concat(
+                    dependency.GetTypes()
+                                .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
+                ).ToList();
+            }
+
             foreach (var component in Container.AllComponents)
             {
                 InstanceComponent(component);
@@ -130,6 +141,16 @@ All parameters in an Autowired Constructor must be components.");
             ((IEnumerable<Type>)assembly.GetTypes())
                 .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
                 .ForEach(t => ReadyInstance(t, Container.Retrieve(t)));
+
+            // Also fill components in dependent assemblies.
+            foreach (var assemblyName in assembly.GetReferencedAssemblies())
+            {
+                var dependency = Assembly.Load(assemblyName);
+
+                ((IEnumerable<Type>)dependency.GetTypes())
+                    .Where(t => t.CustomAttributes.Any(ca => typeof(ComponentAttribute).IsAssignableFrom(ca.AttributeType)))
+                    .ForEach(t => ReadyInstance(t, Container.Retrieve(t)));
+            }
         }
 
         /// <summary>

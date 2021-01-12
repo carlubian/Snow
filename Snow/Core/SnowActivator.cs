@@ -26,6 +26,7 @@ namespace Snow.Core
                     return mi.CustomAttributes.Any(ca => ca.AttributeType == typeof(CreateInstanceAttribute));
                 return false;
             });
+
             return methodInfo != null ? methodInfo.Invoke(null, null) : Activator.CreateInstance(t);
         }
     }

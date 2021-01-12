@@ -1,5 +1,6 @@
 ﻿using Snow;
 using Snow.Attributes;
+using SnowDemo.Core;
 using SnowDemo.Services;
 using System;
 
@@ -18,6 +19,9 @@ namespace SnowDemo
         [Autowired]
         private readonly WrapService? Service;
 
+        [Autowired]
+        private readonly LibraryService? Library;
+
         // Implemented from ISnowRunnable. Logic goes here.
         public void Run(string[]? args)
         {
@@ -26,6 +30,8 @@ namespace SnowDemo
             Console.WriteLine(Service?.GetNumber());
             Console.WriteLine(Service?.Calculate(8));
             Console.WriteLine(Service?.NumberProperty());
+
+            Console.WriteLine(Library.GetMessage());
         }
     }
 }
