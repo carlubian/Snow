@@ -100,6 +100,62 @@
     </div>
 </div>
 
+<!-- Panel de contenido claro -->
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h2>Components inside dependencies</h2>
+            <p class="card-text subtitle">
+                How to deal with components present in a separate assembly.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- Texto de la sección -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-sm-8">
+
+            <p>
+                In large projects, it's common to have several assemblies. If using
+                Snow, you could need to manage components on those assemblies (separate
+                from the "main" assembly with the entry point).
+            </p>
+            <p>
+                Snow supports this functionality out of the box, with no special
+                changes necessary, in these variants:
+            </p>
+            <ul>
+                <li>
+                    A component in the main assembly is injected with a component
+                    defined in the same assembly (base case). (A -> A)
+                </li>
+                <li>
+                    A component in the main assembly is injected with a component
+                    defined in another assembly. (B -> A)
+                </li>
+                <li>
+                    A component in another assembly is injected with a component
+                    defined in the same assembly. (B -> B)
+                </li>
+                <li>
+                    A component in another assembly is injected with a component
+                    defined in a third assembly. (C -> B)
+                </li>
+                <li>
+                    A component in another assembly is injected with a component
+                    defined in the main assembly (though this is a weird use
+                    case, as it would imply that the dependent assembly is
+                    aware of the main assembly). (A -> B)
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
 <!-- Panel de contenido oscuro -->
 <div class="jumbotron jumbotron-fluid cyan-3 my-5">
     <div class="row justify-content-center">

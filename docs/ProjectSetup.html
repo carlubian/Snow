@@ -121,7 +121,7 @@
             <p>
                 Locate the entry point, and make the class extend the ISnowRunnable interface:
             </p>
-            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunnable
 {
     public static void Main(string[] args)
     {
@@ -132,7 +132,7 @@
                 Implement the <span class="emphasis cyan-3-text">Run</span> method required by the interface, and move into it the
                 contents of the Main method:
             </p>
-            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunnable
 {
     public static void Main(string[] args)
     {
@@ -147,7 +147,7 @@
             <p>
                 Tell Snow to execute the program:
             </p>
-            <pre class="prettyprint lang-cs">public class Program : ISnowRunner
+            <pre class="prettyprint lang-cs">public class Program : ISnowRunnable
 {
     public static void Main(string[] args)
     {
