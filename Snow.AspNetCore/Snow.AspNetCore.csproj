@@ -1,18 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0</TargetFrameworks>
+    <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
 
-    <Id>Snow</Id>
-    <Title>Snow</Title>
-    <Version>0.8.1</Version>
+    <Id>Snow.AspNetCore</Id>
+    <Title>Snow.AspNetCore</Title>
+    <Version>0.8.2</Version>
     <Authors>carlubian</Authors>
     <Owners>carlubian</Owners>
     <Company>carlubian</Company>
-    <PackageReleaseNotes>Support for AspNetCore package.</PackageReleaseNotes>
+    <PackageReleaseNotes>Temporary fix for transient SignalR hubs.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/carlubian/Snow</PackageProjectUrl>
-    <Description>Experimental .NET Standard IOC container.</Description>
+    <Description>Add Snow support to ASP.Net Core web projects.</Description>
     <RepositoryUrl>https://github.com/carlubian/Snow.git</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageTags>dotnet-standard, ioc, ioc-container</PackageTags>
@@ -20,7 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNet.Misc.Extensions" Version="1.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Snow" Version="0.8.1" />
   </ItemGroup>
 
 </Project>
