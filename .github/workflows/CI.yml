@@ -15,8 +15,10 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.100-preview3-010431
+        dotnet-version: '5.0.103'
     - name: Build library
-      run: dotnet build Snow/Snow.csproj -f netstandard2.0
+      run: dotnet build Snow/Snow.csproj
+    - name: Build ASp.NET addon
+      run: dotnet build Snow.AspNetCore/Snow.AspNetCore.csproj
     - name: Build demo project
-      run: dotnet build SnowDemo/SnowDemo.csproj -f netcoreapp2.0
+      run: dotnet build SnowDemo/SnowDemo.csproj
